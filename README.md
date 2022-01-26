@@ -32,7 +32,7 @@ In the top pom for an app, add a URL pointer to the ruleset like this:
         <artifactId>versions-maven-plugin</artifactId>
         <version>${version.versions-maven-plugin}</version>
         <configuration>
-            <rulesUri>https://github.com/dsb-norge/maven-versions-dsb-ruleset/blob/main/ruleset.xml</rulesUri>
+            <rulesUri>https://raw.githubusercontent.com/dsb-norge/maven-versions-dsb-ruleset/main/ruleset.xml</rulesUri>
         </configuration>
         <dependencies>
             <dependency>
