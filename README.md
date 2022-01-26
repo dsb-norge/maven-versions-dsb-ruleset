@@ -23,7 +23,6 @@ can be pointed to directly at its repository location (main branch) or it can be
 
 ## Usage
 
-### Direct url
 In the top pom for an app, add a URL pointer to the ruleset like this:
 
     <plugin>
@@ -33,26 +32,6 @@ In the top pom for an app, add a URL pointer to the ruleset like this:
         <version>${version.versions-maven-plugin}</version>
         <configuration>
             <rulesUri>https://raw.githubusercontent.com/dsb-norge/maven-versions-dsb-ruleset/main/ruleset.xml</rulesUri>
-        </configuration>
-        <dependencies>
-            <dependency>
-                <groupId>no.dsb</groupId>
-                <artifactId>maven-versions-dsb-ruleset</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-        </dependencies>
-    </plugin>
-
-### Dependency
-In the top pom for an app, add a classpath pointer to the ruleset like this:
-
-    <plugin>
-        <!-- Exclude non-release versions when running mvn versions:property-updates-report && mvn versions:update-properties -->
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>versions-maven-plugin</artifactId>
-        <version>${version.versions-maven-plugin}</version>
-        <configuration>
-            <rulesUri>classpath:///maven-versions-rules.xml</rulesUri>
         </configuration>
         <dependencies>
             <dependency>
