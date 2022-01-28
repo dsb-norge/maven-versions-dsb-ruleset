@@ -33,11 +33,4 @@ In the top pom for an app, add a URL pointer to the ruleset like this:
         <configuration>
             <rulesUri>https://raw.githubusercontent.com/dsb-norge/maven-versions-dsb-ruleset/main/ruleset.xml</rulesUri>
         </configuration>
-        <dependencies>
-            <dependency>
-                <groupId>no.dsb</groupId>
-                <artifactId>maven-versions-dsb-ruleset</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-        </dependencies>
     </plugin>
