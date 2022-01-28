@@ -6,11 +6,12 @@ For all applications, we should periodically check for new versions of third par
 
 This can be automated like this:
 
-    mvn versions:property-updates-report
-    mvn versions:update-properties
+    mvn versions:update-properties versions:update-parent
 
-The first command creates an html report with new versions. The second command replaces the values of the version
-properties inside pom.xml.
+The first goal replaces the values of the version properties inside pom.xml, for all dependencies. The second goal
+updates the parent version.
+
+*NOTE: Take care if the update results in a new major version, especially for parent!* 
 
 However, the versions plugin will find *all* new versions, including alphas, betas, milestones, candidate releases
 and so on.
@@ -29,7 +30,7 @@ In the top pom for an app, add a URL pointer to the ruleset like this:
         <!-- Exclude non-release versions when running mvn versions:property-updates-report && mvn versions:update-properties -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>${version.versions-maven-plugin}</version>
+        <version>${versions-maven-plugin.version}</version>
         <configuration>
             <rulesUri>https://raw.githubusercontent.com/dsb-norge/maven-versions-dsb-ruleset/main/ruleset.xml</rulesUri>
         </configuration>
