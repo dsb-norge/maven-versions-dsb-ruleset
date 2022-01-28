@@ -5,6 +5,7 @@
         <ignoreVersion type="regex">.*-alpha.*</ignoreVersion>
         <ignoreVersion type="regex">.*Alpha.*</ignoreVersion>
         <ignoreVersion type="regex">.*Beta.*</ignoreVersion>
+        <ignoreVersion type="regex">.*-beta.*</ignoreVersion>
         <ignoreVersion type="regex">.*-M\d*</ignoreVersion>
         <ignoreVersion type="regex">.*jboss-.*</ignoreVersion>
         <ignoreVersion type="regex">.*\.jre[6-7]</ignoreVersion>
