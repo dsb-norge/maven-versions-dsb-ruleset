@@ -8,6 +8,7 @@
         <ignoreVersion type="regex">.*jboss-.*</ignoreVersion>
         <ignoreVersion type="regex">.*\.jre[6-7]</ignoreVersion>
         <ignoreVersion type="regex">.*\.jre17</ignoreVersion>
+        <ignoreVersion type="regex">.*\.jre18</ignoreVersion>
         <ignoreVersion type="regex">.*[Rr][Cc].*</ignoreVersion>
         <ignoreVersion type="regex">.*atlassian.*</ignoreVersion>
         <ignoreVersion type="regex">.*preview.*</ignoreVersion>
