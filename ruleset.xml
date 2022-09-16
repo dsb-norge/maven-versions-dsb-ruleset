@@ -19,4 +19,11 @@
         <!-- We should never use multithread version of kotlin-coroutines -->
         <ignoreVersion type="regex">.*-native-mt</ignoreVersion>
     </ignoreVersions>
+    <rules>
+        <rule groupId="no.dsb" artifactId="*-api" comparisonMethod="maven">
+            <ignoreVersions>
+                <ignoreVersion>*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+    </rules>
 </ruleset>
