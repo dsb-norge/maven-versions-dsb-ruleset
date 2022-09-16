@@ -19,6 +19,7 @@
         <!-- We should never use multithread version of kotlin-coroutines -->
         <ignoreVersion type="regex">.*-native-mt</ignoreVersion>
     </ignoreVersions>
+    <!-- The following excludes all internal dsb-api-artifacts that conforms to the *-api pattern from automatic bumping -->
     <rules>
         <rule groupId="no.dsb" artifactId="*-api" comparisonMethod="maven">
             <ignoreVersions>
