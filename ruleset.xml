@@ -22,7 +22,7 @@
     <rules>
         <rule groupId="no.dsb" artifactId="*-api" comparisonMethod="maven">
             <ignoreVersions>
-                <ignoreVersion>*</ignoreVersion>
+                <ignoreVersion>.*</ignoreVersion>
             </ignoreVersions>
         </rule>
     </rules>
