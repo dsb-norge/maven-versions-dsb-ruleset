@@ -26,5 +26,10 @@
                 <ignoreVersion type="regex">.*</ignoreVersion>
             </ignoreVersions>
         </rule>
+        <rule groupId="commons-io" artifactId="commons-io" comparisonMethod="maven">
+            <ignoreVersions>
+                <ignoreVersion>20030203.000550</ignoreVersion>
+            </ignoreVersions>
+        </rule>
     </rules>
 </ruleset>
