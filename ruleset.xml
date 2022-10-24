@@ -30,6 +30,8 @@
             <!-- Ignore old version which is seen numerically as newer than actual newer versions. -->
             <ignoreVersions>
                 <ignoreVersion>20030211.134440</ignoreVersion>
+                <ignoreVersion>20021128.082114</ignoreVersion>
+                <ignoreVersion>20020520</ignoreVersion>
             </ignoreVersions>
         </rule>
         <rule groupId="commons-codec" artifactId="commons-codec" comparisonMethod="maven">
@@ -48,14 +50,16 @@
             <!-- Ignore old version which is seen numerically as newer than actual newer versions. -->
             <ignoreVersions>
                 <ignoreVersion>20030805.205232</ignoreVersion>
+                <ignoreVersion>20030623.125255</ignoreVersion>
+                <ignoreVersion>20030211.160026</ignoreVersion>
             </ignoreVersions>
         </rule>
         <!-- We don't use proper semver versioning for internal apps, which sometimes confuses the plugin.
              As long as our version scheme uses leading zeros, comparison method 'numeric' should be better. -->
-        <rule groupId="no.dsb" comparisonMethod="numeric"/>
-        <rule groupId="no.dsb" artifactId="*-api" comparisonMethod="numeric">
-            <!-- The following excludes all internal dsb-api-artifacts that conforms to the *-api pattern from automatic
-                 bumping. These are used "everywhere" so updates will be very noisy - we do this manually instead. -->
+        <rule groupId="no.dsb" artifactId=".*" comparisonMethod="numeric"/>
+        <rule groupId="no.dsb" artifactId=".*-api" comparisonMethod="numeric">
+            <!-- This excludes all internal dsb-api-artifacts that conforms to the *-api pattern from automatic
+                bumping. These are used "everywhere" so updates will be very noisy - we do this manually instead. -->
             <ignoreVersions>
                 <ignoreVersion type="regex">.*</ignoreVersion>
             </ignoreVersions>
