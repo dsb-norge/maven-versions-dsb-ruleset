@@ -50,10 +50,9 @@
                 <ignoreVersion>20030805.205232</ignoreVersion>
             </ignoreVersions>
         </rule>
-        <rule groupId="no.dsb" comparisonMethod="numeric">
-            <!-- We don't use proper semver versioning for internal apps, which sometimes confuses the plugin.
-                 As long as our version scheme uses leading zeros, comparison method 'numeric' should be better. -->
-        </rule>
+        <!-- We don't use proper semver versioning for internal apps, which sometimes confuses the plugin.
+             As long as our version scheme uses leading zeros, comparison method 'numeric' should be better. -->
+        <rule groupId="no.dsb" comparisonMethod="numeric"/>
         <rule groupId="no.dsb" artifactId="*-api" comparisonMethod="numeric">
             <!-- The following excludes all internal dsb-api-artifacts that conforms to the *-api pattern from automatic
                  bumping. These are used "everywhere" so updates will be very noisy - we do this manually instead. -->
