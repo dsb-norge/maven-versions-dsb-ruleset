@@ -19,16 +19,42 @@
         <!-- We should never use multithread version of kotlin-coroutines -->
         <ignoreVersion type="regex">.*-native-mt</ignoreVersion>
     </ignoreVersions>
-    <!-- The following excludes all internal dsb-api-artifacts that conforms to the *-api pattern from automatic bumping -->
     <rules>
-        <rule groupId="no.dsb" artifactId="*-api" comparisonMethod="maven">
+        <rule groupId="com.aspose" artifactId="aspose-words" comparisonMethod="maven">
+            <!-- Excluding aspose-words from updates as our license only allows versions up to 20.9. -->
             <ignoreVersions>
                 <ignoreVersion type="regex">.*</ignoreVersion>
             </ignoreVersions>
         </rule>
+        <rule groupId="commons-beanutils" artifactId="commons-beanutils" comparisonMethod="maven">
+            <!-- Ignore old version which is seen numerically as newer than actual newer versions. -->
+            <ignoreVersions>
+                <ignoreVersion>20030211.134440</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="commons-codec" artifactId="commons-codec" comparisonMethod="maven">
+            <!-- Ignore old version which is seen numerically as newer than actual newer versions. -->
+            <ignoreVersions>
+                <ignoreVersion>20041127.091804</ignoreVersion>
+            </ignoreVersions>
+        </rule>
         <rule groupId="commons-io" artifactId="commons-io" comparisonMethod="maven">
+            <!-- Ignore old version which is seen numerically as newer than actual newer versions. -->
             <ignoreVersions>
                 <ignoreVersion>20030203.000550</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="commons-net" artifactId="commons-net" comparisonMethod="maven">
+            <!-- Ignore old version which is seen numerically as newer than actual newer versions. -->
+            <ignoreVersions>
+                <ignoreVersion>20030805.205232</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="no.dsb" artifactId="*-api" comparisonMethod="maven">
+            <!-- The following excludes all internal dsb-api-artifacts that conforms to the *-api pattern from automatic
+                 bumping. These are used "everywhere" so updates will be very noisy - we do this manually instead. -->
+            <ignoreVersions>
+                <ignoreVersion type="regex">.*</ignoreVersion>
             </ignoreVersions>
         </rule>
     </rules>
