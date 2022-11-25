@@ -54,10 +54,16 @@
                 <ignoreVersion>20030211.160026</ignoreVersion>
             </ignoreVersions>
         </rule>
-        <rule groupId="org.springframework.boot" artifactId="spring-boot-starter-parent" comparisonMethod="maven">
+        <rule groupId="org.springframework.boot" artifactId=".*" comparisonMethod="maven">
             <!-- Ignore 3.* until we are ready to move to Java 17 and spring-boot 3.x -->
             <ignoreVersions>
                 <ignoreVersion type="regex">3.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="org.springframework.security" artifactId=".*" comparisonMethod="maven">
+            <!-- Ignore 6.* until we are ready to move to Java 17 and spring-security 6.x -->
+            <ignoreVersions>
+                <ignoreVersion type="regex">6.*</ignoreVersion>
             </ignoreVersions>
         </rule>
         <!-- We don't use proper semver versioning for internal apps, which sometimes confuses the plugin.
