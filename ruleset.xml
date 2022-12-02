@@ -66,6 +66,18 @@
                 <ignoreVersion type="regex">6.*</ignoreVersion>
             </ignoreVersions>
         </rule>
+        <rule groupId="io.github.resilience4j" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 2.* until we are ready to move to Java 17 -->
+                <ignoreVersion type="regex">2.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="co.elastic.clients" artifactId="elasticsearch-java" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 8.* until we are ready to move to elasticsearch 8+ -->
+                <ignoreVersion type="regex">8.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
         <!-- We don't use proper semver versioning for internal apps, which sometimes confuses the plugin.
              As long as our version scheme uses leading zeros, comparison method 'numeric' should be better. -->
         <rule groupId="no.dsb" artifactId=".*" comparisonMethod="numeric"/>
