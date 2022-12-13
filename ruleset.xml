@@ -72,6 +72,12 @@
                 <ignoreVersion type="regex">2.*</ignoreVersion>
             </ignoreVersions>
         </rule>
+        <rule groupId="net.javacrumbs.shedlock" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 5.* until we are ready to move to Java 17 -->
+                <ignoreVersion type="regex">5.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
         <rule groupId="co.elastic.clients" artifactId="elasticsearch-java" comparisonMethod="maven">
             <ignoreVersions>
                 <!-- Ignore 8.* until we are ready to move to elasticsearch 8+ -->
