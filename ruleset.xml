@@ -90,6 +90,12 @@
                 <ignoreVersion type="regex">3.*</ignoreVersion>
             </ignoreVersions>
         </rule>
+        <rule groupId="de.codecentric" artifactId="spring-boot-admin-starter-client" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 3.* until we are ready to move to spring boot 3 -->
+                <ignoreVersion type="regex">3.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
         <!-- We don't use proper semver versioning for internal apps, which sometimes confuses the plugin.
              As long as our version scheme uses leading zeros, comparison method 'numeric' should be better. -->
         <rule groupId="no.dsb" artifactId=".*" comparisonMethod="numeric"/>
