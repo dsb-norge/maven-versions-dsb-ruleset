@@ -1,6 +1,11 @@
 <ruleset xmlns="http://mojo.codehaus.org/versions-maven-plugin/rule/2.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" comparisonMethod="maven"
          xsi:schemaLocation="http://mojo.codehaus.org/versions-maven-plugin/rule/2.0.0 https://www.mojohaus.org/versions-maven-plugin/xsd/rule-2.0.0.xsd">
+
+    <!-- ############################################################################################################################ -->
+    <!-- This ruleset is for use on-premises, since we have somewhat different infrastructure requirements there as compared to cloud -->
+    <!-- ############################################################################################################################ -->
+
     <ignoreVersions>
         <ignoreVersion type="regex">.*[Aa][Ll]?[Pp]?[Hh]?[Aa]?.*</ignoreVersion>
         <ignoreVersion type="regex">.*[Bb][Ee]?[Tt]?[Aa]?.*</ignoreVersion>
@@ -54,10 +59,52 @@
                 <ignoreVersion>20030211.160026</ignoreVersion>
             </ignoreVersions>
         </rule>
+        <rule groupId="org.springframework.boot" artifactId="spring-boot-starter-parent" comparisonMethod="maven">
+            <!-- Ignore 3.* until we are ready to move to Java 17 and spring-boot 3.x -->
+            <ignoreVersions>
+                <ignoreVersion type="regex">3.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="org.springframework.security" artifactId="spring-security-web" comparisonMethod="maven">
+            <!-- Ignore 6.* until we are ready to move to Java 17 and spring-security 6.x -->
+            <ignoreVersions>
+                <ignoreVersion type="regex">6.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="io.github.resilience4j" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 2.* until we are ready to move to Java 17 -->
+                <ignoreVersion type="regex">2.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="net.javacrumbs.shedlock" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 5.* until we are ready to move to Java 17 -->
+                <ignoreVersion type="regex">5.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
         <rule groupId="co.elastic.clients" artifactId="elasticsearch-java" comparisonMethod="maven">
             <ignoreVersions>
                 <!-- Ignore 8.* until we are ready to move to elasticsearch 8+ -->
                 <ignoreVersion type="regex">8.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="org.springframework.cloud" artifactId="spring-cloud-starter-kubernetes-fabric8" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 3.* until we are ready to move to java 17 -->
+                <ignoreVersion type="regex">3.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="de.codecentric" artifactId="spring-boot-admin-starter-client" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 3.* until we are ready to move to spring boot 3 -->
+                <ignoreVersion type="regex">3.*</ignoreVersion>
+            </ignoreVersions>
+        </rule>
+        <rule groupId="de.codecentric" artifactId="spring-boot-admin-starter-server" comparisonMethod="maven">
+            <ignoreVersions>
+                <!-- Ignore 3.* until we are ready to move to spring boot 3 -->
+                <ignoreVersion type="regex">3.*</ignoreVersion>
             </ignoreVersions>
         </rule>
         <!-- We don't use proper semver versioning for internal apps, which sometimes confuses the plugin.
